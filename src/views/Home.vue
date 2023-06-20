@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>投票アプリ</h2>
-    <form data-netlify="true">
+    <form method="POST" data-netlify="true">
       <input type="text" v-model="name" placeholder="名前" name="name" />
       <select v-model="selectedOption" name="selectedOption">
         <option v-for="option in options" :key="option">{{ option }}</option>
@@ -10,6 +10,7 @@
     </form>
   </div>
 </template>
+
 
 <script>
 export default {
