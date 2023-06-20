@@ -8,20 +8,26 @@ const votes = {
   };
   
   exports.handler = async (event) => {
-    const { name, selectedOption } = JSON.parse(event.body);
+    try {
+      const formData = JSON.parse(event.body);
+      const { name, selectedOption } = formData;
   
-    // 選択肢の投票数を更新
-    votes[selectedOption]++;
+      // 選択肢の投票数を更新
+      votes[selectedOption]++;
   
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ totalVotes: Object.values(votes).reduce((a, b) => a + b), winner: getWinner() }),
-    };
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ totalVotes: Object.values(votes).reduce((a, b) => a + b), winner: getWinner() }),
+      };
+    } catch (error) {
+      return { statusCode: 500, body: error.toString() };
+    }
   };
   
   function getWinner() {
     const maxVotes = Math.max(...Object.values(votes));
-    const winner = Object.keys(votes).find((option) => votes[option] === maxVotes);
-    return winner;
+    const winnerOptions = Object.keys(votes).filter((option) => votes[option] === maxVotes);
+    return winnerOptions;
   }
+  
   
