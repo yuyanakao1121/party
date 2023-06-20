@@ -1,4 +1,6 @@
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
@@ -8,12 +10,23 @@ export default {
     };
   },
   methods: {
-    vote() {
-      // サーバに投票情報を送信する処理を実装
+    async vote() {
+      try {
+        const response = await axios.post('/.netlify/functions/vote', {
+          name: this.name,
+          selectedOption: this.selectedOption,
+        });
+
+        const { totalVotes, winner } = response.data;
+        // 結果の表示など、必要な処理を追加
+      } catch (error) {
+        console.error(error);
+      }
     },
   },
 };
 </script>
+
 
 <template>
   <div>
