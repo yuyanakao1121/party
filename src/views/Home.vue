@@ -1,24 +1,28 @@
 <template>
-  <div>
-    <h2>投票アプリ</h2>
-    <form netlify>
-      <input type="text" v-model="name" placeholder="名前" name="name" />
-      <select v-model="selectedOption" name="selectedOption">
-        <option v-for="option in options" :key="option">{{ option }}</option>
-      </select>
-      <button type="submit">投票</button>
-    </form>
-  </div>
+<div class="container">
+  <h1>お問い合わせ</h1>
+  <form name="contact" method="POST" data-netlify="true">
+    <div>
+      <label for="name">お名前（必須）</label>
+      <input name="name" type="text" required />
+    </div>
+    <div>
+      <label for="email">メールアドレス（必須）</label>
+      <input name="email" type="email" required />
+    </div>
+    <div>
+      <label for="content">お問い合わせ内容</label>
+      <textarea
+        name="content"
+        rows="10"
+        required
+      ></textarea>
+    </div>
+    <button type="submit">送信する</button>
+  </form>
+</div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      name: '',
-      selectedOption: '',
-      options: ['選択肢1', '選択肢2', '選択肢3', '選択肢4'],
-    };
-  },
-};
+<script setup>
+
 </script>
