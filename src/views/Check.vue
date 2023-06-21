@@ -1,9 +1,9 @@
 <template>
-    <div>
+    <div class="container">
       <h2>Confirmation Page</h2>
       <p>Name: {{ store.name }}</p>
       <p>Course: {{ store.selectedCourse }}</p>
-      <button @click="submitForm">参加</button>
+      <button @click="submitForm">送信する</button>
       <button @click="cancel">キャンセル</button>
     </div>
   </template>
@@ -29,8 +29,7 @@
       });
   
       if (response.status === 200) {
-        const data = await response.text();
-        console.log('登録が成功しました:', data);
+        console.log('登録が成功しました');
         router.push('/');
       } else {
         console.error('登録エラー');
@@ -43,7 +42,6 @@
   };
   
   const cancel = () => {
-    // キャンセルの処理
     router.push('/');
   };
   </script>
