@@ -1,18 +1,25 @@
 <template>
   <div class="container">
     <form name="contact" method="POST" @submit="check">
+      <h1>タイトル</h1>
       <p>
         <label>Your Name: <input type="text" v-model="name" /></label>
       </p>
-      <p>
-        <label>Select Course:</label>
+      <p>説明</p>
+      <p class="course-list">
         <label><input type="radio" v-model="selectedCourse" value="course1" /> Course 1</label>
+      </p>
+      <p class="course-list">
         <label><input type="radio" v-model="selectedCourse" value="course2" /> Course 2</label>
+      </p>
+      <p class="course-list">
         <label><input type="radio" v-model="selectedCourse" value="course3" /> Course 3</label>
+      </p>
+      <p class="course-list">
         <label><input type="radio" v-model="selectedCourse" value="course4" /> Course 4</label>
       </p>
       <p>
-        <button type="submit">参加</button>
+        <button type="submit">確認</button>
       </p>
     </form>
   </div>
@@ -41,5 +48,13 @@ const check = () => {
 .container {
   max-width: 800px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.course-list {
+  display: flex;
+  flex-direction: column;
 }
 </style>
