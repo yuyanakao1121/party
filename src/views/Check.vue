@@ -28,25 +28,23 @@
         }),
       });
   
-      if (response.ok) {
-        // 送信成功のポップアップを表示
-        window.alert('送信できました');
-  
-        // トップページにリダイレクト
-        router.push('/home');
+      if (response.status === 200) {
+        const data = await response.text();
+        console.log('登録が成功しました:', data);
+        router.push('/');
       } else {
         console.error('登録エラー');
-        router.push('/home');
+        router.push('/');
       }
     } catch (error) {
       console.error('APIリクエストエラー:', error);
-      router.push('/home');
+      router.push('/');
     }
   };
   
   const cancel = () => {
     // キャンセルの処理
-    router.push('/home');
+    router.push('/');
   };
   </script>
   
@@ -56,5 +54,4 @@
     margin: 0 auto;
   }
   </style>
-  
   
