@@ -28,9 +28,11 @@
         }),
       });
   
-      if (response.status === 200) {
-        const data = await response.text();
-        console.log('登録が成功しました:', data);
+      if (response.ok) {
+        // 送信成功のポップアップを表示
+        window.alert('送信できました');
+  
+        // トップページにリダイレクト
         router.push('/home');
       } else {
         console.error('登録エラー');
@@ -54,4 +56,5 @@
     margin: 0 auto;
   }
   </style>
+  
   
