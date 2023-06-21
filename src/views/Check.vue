@@ -17,7 +17,7 @@
   
   const submitForm = async () => {
     try {
-      const response = await fetch('https://ssgform.com/s/YzZTNTMQCQ6l', {
+      const response = await fetch('https://aiful-party.form.newt.so/v1/4Sue07Uvy', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
