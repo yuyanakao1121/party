@@ -3,28 +3,90 @@
     <form name="contact" method="POST" @submit="check">
       <h1>aiful party</h1>
       <h3> 6/30(Fri.)　18:30～20：30　</h3>
-      <h3><a href="https://restaurant-town.com/">Restaurant:TOWN</a></h3>
-      <p1>みなさん、お疲れ様！</p1>
-      <p1>交流会をやるよ！立食形式でゆるゆる楽しもう！パートナーや家族も一緒に参加してくれてOK！</p1>
-        <p1>来れる人は下のフォームで名前とコース選んで参加ボタン押してね。by GPT</p1>
+      <h3><a href="https://restaurant-town.com/">会場:TOWN</a></h3>
+      <p>みなさん、お疲れ様！交流会をやるよ！立食形式でゆるゆる楽しもう！<br>
+      パートナーや家族も一緒に参加してくれてOK!<br>
+      来れる人はニックネームとコース選んで確認ボタンをPUSH!</p>
       <p>
-        <label>Your Name: <input type="text" v-model="name" /></label>
+        <label>ニックネーム: <input type="text" v-model="name" :class="{ 'error': nameError }"/></label>
+        <span v-if="nameError" class="error-message">What's your nick name?</span>
       </p>
-      <p>＊一番多く選ばれたコースでセッティングします</p>
-      <p class="course-list">
-        <label><input type="radio" v-model="selectedCourse" value="course1" /> Course 1</label>
-      </p>
-      <p class="course-list">
-        <label><input type="radio" v-model="selectedCourse" value="course2" /> Course 2</label>
-      </p>
-      <p class="course-list">
-        <label><input type="radio" v-model="selectedCourse" value="course3" /> Course 3</label>
-      </p>
-      <p class="course-list">
-        <label><input type="radio" v-model="selectedCourse" value="course4" /> Course 4</label>
-      </p>
-      <p>
-        <button type="submit">参加!!</button>
+      <p class="description">＊一番多く選ばれたコースでセッティングします</p>
+
+      <div class="course-list">
+        <label>
+          <input type="radio" v-model="selectedCourse" value="course1" />
+          お料理７品とデザート、コーヒーが付いたスタンダードなコース ¥2,700
+        </label>
+        <p v-if="selectedCourse === 'course1'" class="course-details narrow-width">
+<p>◆前菜５種盛り<br>
+◆フォカッチャ<br>
+◆ガーデンサラダ<br>
+◆コンソメ風味のフライドポテト<br>
+◆リゾット<br>
+◆モチコチキン<br>
+◆パスタ<br>
+◆デザート<br>
+◆コーヒーor紅茶</p>
+</p></div>
+
+      <div class="course-list">
+        <label>
+          <input type="radio" v-model="selectedCourse" value="course2" />
+          お料理７品のスタンダードコース。２時間ドリンク飲み放題付き ¥4,300
+        </label>
+        <p v-if="selectedCourse === 'course2'" class="course-details narrow-width">
+          <p>◆前菜５種盛り<br>
+◆フォカッチャ<br>
+◆ガーデンサラダ<br>
+◆コンソメ風味のフライドポテト<br>
+◆リゾット<br>
+◆モチコチキン<br>
+◆パスタ<br>
+◆デザート<br>
+◆コーヒーor紅茶<br>
+◆２時間飲み放題</p>
+</p></div>
+
+      <div class="course-list">
+        <label>
+          <input type="radio" v-model="selectedCourse" value="course3" />
+          メインのお魚料理などお料理８品がつくタウンおススメのコース ¥3,200
+        </label>
+        <p v-if="selectedCourse === 'course3'" class="course-details narrow-width">
+<p>◆前菜５種盛り<br>
+◆フォカッチャ<br>
+◆ガーデンサラダ<br>
+◆コンソメ風味のフライドポテト<br>
+◆リゾット<br>
+◆モチコチキン<br>
+◆パスタ<br>
+◆季節のお魚料理<br>
+◆デザートの盛り合わせ<br>
+◆コーヒーor紅茶</p>
+</p></div>
+
+      <div class="course-list">
+        <label>
+          <input type="radio" v-model="selectedCourse" value="course4" />
+          お料理８品に飲み放題がついたタウンおすすめのコース ¥4,800
+        </label>
+        <p v-if="selectedCourse === 'course4'" class="course-details narrow-width">
+          <p>◆前菜５種盛り<br>
+◆フォカッチャ<br>
+◆ガーデンサラダ<br>
+◆コンソメ風味のフライドポテト<br>
+◆リゾット<br>
+◆モチコチキン<br>
+◆パスタ<br>
+◆季節のお魚料理<br>
+◆デザートの盛り合わせ<br>
+◆コーヒーor紅茶<br>
+◆２時間飲み放題</p>
+</p></div>
+
+        <p>
+        <button type="submit">確認</button>
       </p>
     </form>
   </div>
@@ -39,8 +101,15 @@ const store = unchi();
 const router = useRouter();
 const name = ref('');
 const selectedCourse = ref('');
+const nameError = ref(false);
 
-const check = () => {
+const check = (event) => {
+  event.preventDefault();
+
+  if (name.value.trim() === '') {
+    nameError.value = true;
+    return;
+  }
   router.push({
     path: '/check',
   });
@@ -64,4 +133,20 @@ const check = () => {
   display: flex;
   flex-direction: column;
 }
+.error {
+  border: 1px solid red;
+}
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+.description {
+  color: red;
+}
+.course-details.narrow-width {
+  max-width: 400px; /* 好みに合わせて幅を調整してください */
+  margin-left: auto;
+  margin-right: auto;
+}
+
 </style>
