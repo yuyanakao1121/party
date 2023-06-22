@@ -2,7 +2,7 @@
   <div class="container">
     <form name="contact" method="POST" @submit="check">
       <h1>aiful party</h1>
-      <h3> 6/30(Fri.)　18:30～20：30　</h3>
+      <h3> 6/30(Fri.) 18:30～20:30</h3>
       <h3><a href="https://restaurant-town.com/">会場:TOWN</a></h3>
       <p>みなさん、お疲れ様！交流会をやるよ！立食形式でゆるゆる楽しもう！<br>
       パートナーや家族も一緒に参加してくれてOK!<br>
@@ -89,6 +89,14 @@
         <button type="submit">投票</button>
       </p>
     </form>
+    <br>
+    <div class="centered">
+      <h2>参加人数: {{ names.length }}</h2>
+      <h3>名簿一覧:</h3>
+      <ul>
+        <li v-for="name in names" :key="name">{{ name }}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -102,6 +110,9 @@ const router = useRouter();
 const name = ref('');
 const selectedCourse = ref('');
 const nameError = ref(false);
+
+//以下に参加者をハードコーディングするしかない
+const names = ref(['直で', '書いて', 'いくしか','ない']); 
 
 const check = (event) => {
   event.preventDefault();
@@ -148,5 +159,4 @@ const check = (event) => {
   margin-left: auto;
   margin-right: auto;
 }
-
 </style>
