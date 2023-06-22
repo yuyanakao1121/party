@@ -112,7 +112,7 @@ const selectedCourse = ref('');
 const nameError = ref(false);
 
 //以下に参加者をハードコーディングするしかない
-const names = ref(['直で', '書いて', 'いくしか','ない']); 
+const names = ref([]); 
 
 const check = (event) => {
   event.preventDefault();
