@@ -33,7 +33,7 @@
       <div class="course-list">
         <label>
           <input type="radio" v-model="selectedCourse" value="お料理７品飲み放題コース ¥4,300" />
-          お料理７品のスタンダードコース。２時間ドリンク飲み放題付き ¥4,300
+          お料理７品のスタンダードコース。２時間ドリンク<b>飲み放題付き</b> ¥4,300
         </label>
         <p v-if="selectedCourse === 'お料理７品飲み放題コース ¥4,300'" class="course-details narrow-width">
           <p>◆前菜５種盛り<br>
@@ -45,13 +45,13 @@
 ◆パスタ<br>
 ◆デザート<br>
 ◆コーヒーor紅茶<br>
-◆２時間飲み放題</p>
+◆<b>２時間飲み放題</b></p>
 </p></div>
 
       <div class="course-list">
         <label>
           <input type="radio" v-model="selectedCourse" value="お料理８品コース ¥3,200" />
-          メインのお魚料理などお料理８品がつくタウンおススメのコース ¥3,200
+          メインの<b>お魚料理</b>などお料理８品がつくタウンおススメのコース ¥3,200
         </label>
         <p v-if="selectedCourse === 'お料理８品コース ¥3,200'" class="course-details narrow-width">
 <p>◆前菜５種盛り<br>
@@ -61,7 +61,7 @@
 ◆リゾット<br>
 ◆モチコチキン<br>
 ◆パスタ<br>
-◆季節のお魚料理<br>
+◆<b>季節のお魚料理</b><br>
 ◆デザートの盛り合わせ<br>
 ◆コーヒーor紅茶</p>
 </p></div>
@@ -69,7 +69,7 @@
       <div class="course-list">
         <label>
           <input type="radio" v-model="selectedCourse" value="お料理８品飲み放題コース ¥4,800" />
-          お魚料理などの８品に飲み放題がついたタウンおすすめのコース ¥4,800
+          お魚料理などの８品に<b>飲み放題</b>がついたタウンおすすめのコース ¥4,800
         </label>
         <p v-if="selectedCourse === 'お料理８品飲み放題コース ¥4,800'" class="course-details narrow-width">
           <p>◆前菜５種盛り<br>
@@ -79,10 +79,10 @@
 ◆リゾット<br>
 ◆モチコチキン<br>
 ◆パスタ<br>
-◆季節のお魚料理<br>
+◆<b>季節のお魚料理</b><br>
 ◆デザートの盛り合わせ<br>
 ◆コーヒーor紅茶<br>
-◆２時間飲み放題</p>
+◆<b>２時間飲み放題</b></p>
 </p></div>
 
         <p>
