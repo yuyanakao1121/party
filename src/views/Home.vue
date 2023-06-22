@@ -19,7 +19,7 @@
           <input type="radio" v-model="selectedCourse" value="お料理７品コース ¥2,700" />
           お料理７品とデザート、コーヒーが付いたスタンダードなコース ¥2,700
         </label>
-        <p v-if="selectedCourse === 'お料理７品コース ¥2,700'" class="course-details narrow-width">
+        <p v-if="selectedCourse === 'お料理７品コース ¥2,700'" class="course-details narrow-width left-align">
 <p>前菜５種盛り<br>
 フォカッチャ<br>
 ガーデンサラダ<br>
@@ -36,7 +36,7 @@
           <input type="radio" v-model="selectedCourse" value="お料理７品飲み放題コース ¥4,300" />
           お料理７品のスタンダードコース。２時間ドリンク<b>飲み放題付き</b> ¥4,300
         </label>
-        <p v-if="selectedCourse === 'お料理７品飲み放題コース ¥4,300'" class="course-details narrow-width">
+        <p v-if="selectedCourse === 'お料理７品飲み放題コース ¥4,300'" class="course-details narrow-width left-align">
           <p>前菜５種盛り<br>
 フォカッチャ<br>
 ガーデンサラダ<br>
@@ -54,7 +54,7 @@
           <input type="radio" v-model="selectedCourse" value="お料理８品コース ¥3,200" />
           メインの<b>お魚料理</b>などお料理８品がつくタウンおススメのコース ¥3,200
         </label>
-        <p v-if="selectedCourse === 'お料理８品コース ¥3,200'" class="course-details narrow-width">
+        <p v-if="selectedCourse === 'お料理８品コース ¥3,200'" class="course-details narrow-width left-align">
 <p>前菜５種盛り<br>
 フォカッチャ<br>
 ガーデンサラダ<br>
@@ -72,7 +72,7 @@
           <input type="radio" v-model="selectedCourse" value="お料理８品飲み放題コース ¥4,800" />
           <b>お魚料理</b>などの８品に<b>飲み放題</b>がついたタウンおすすめのコース ¥4,800
         </label>
-        <p v-if="selectedCourse === 'お料理８品飲み放題コース ¥4,800'" class="course-details narrow-width">
+        <p v-if="selectedCourse === 'お料理８品飲み放題コース ¥4,800'" class="course-details narrow-width left-align">
           <p>前菜５種盛り<br>
 フォカッチャ<br>
 ガーデンサラダ<br>
@@ -159,5 +159,8 @@ const check = (event) => {
   max-width: 400px; /* 好みに合わせて幅を調整してください */
   margin-left: auto;
   margin-right: auto;
+}
+.course-details.left-align {
+  text-align: left;
 }
 </style>
