@@ -29,7 +29,7 @@
 
     isSubmitting.value = true;
     try {
-      const response = await fetch('https://aiful-party.form.newt.so/v1/4Sue07Uvy', {
+      const response = await fetch('https://aiful-party.form.newt.so/v1/cZh5lvNA4', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
