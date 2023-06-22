@@ -4,9 +4,10 @@
       <h1>aiful party</h1>
       <h3> 6/30(Fri.) 18:30～20:30</h3>
       <h3><a href="https://restaurant-town.com/">会場:TOWN</a></h3>
-      <p>みなさん、お疲れ様！交流会をやるよ！立食形式でゆるゆる楽しもう！<br>
-      パートナーや家族も一緒に参加してくれてOK!<br>
-      来れる人はニックネームとコース選んで投票ボタンを押して!</p>
+      <p>みなさん、お疲れ様！交流会をやるよ！<br>
+        立食形式でゆるゆる楽しもう！<br>
+      パートナーや家族も一緒に参加OK!<br>
+      来れる人はニックネームとコース選んで、週明けまでに投票ボタンを押して!</p>
       <p>
         <label>ニックネーム: <input type="text" v-model="name" :class="{ 'error': nameError }"/></label>
         <span v-if="nameError" class="error-message">What's your nick name?</span>
