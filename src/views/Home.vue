@@ -69,7 +69,7 @@
       <div class="course-list">
         <label>
           <input type="radio" v-model="selectedCourse" value="お料理８品飲み放題コース ¥4,800" />
-          お魚料理などの８品に<b>飲み放題</b>がついたタウンおすすめのコース ¥4,800
+          <b>お魚料理</b>などの８品に<b>飲み放題</b>がついたタウンおすすめのコース ¥4,800
         </label>
         <p v-if="selectedCourse === 'お料理８品飲み放題コース ¥4,800'" class="course-details narrow-width">
           <p>前菜５種盛り<br>
