@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <h2>Confirmation Page</h2>
-    <p>Name: {{ store.name }}</p>
-    <p>Course: {{ store.selectedCourse }}</p>
+    <p>ニックネーム: {{ store.name }}</p>
+    <p>投票したコース: {{ store.selectedCourse }}</p>
     <button @click="submitForm" :disabled="isSubmitting || isSubmitted" class="join-button">Join!!</button>
     <button @click="cancel">Back</button>
     <div v-if="isSubmitted" class="success-message">

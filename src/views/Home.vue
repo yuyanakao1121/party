@@ -6,19 +6,19 @@
       <h3><a href="https://restaurant-town.com/">会場:TOWN</a></h3>
       <p>みなさん、お疲れ様！交流会をやるよ！立食形式でゆるゆる楽しもう！<br>
       パートナーや家族も一緒に参加してくれてOK!<br>
-      来れる人はニックネームとコース選んで確認ボタンをPUSH!</p>
+      来れる人はニックネームとコース選んで投票ボタンを押して!</p>
       <p>
         <label>ニックネーム: <input type="text" v-model="name" :class="{ 'error': nameError }"/></label>
         <span v-if="nameError" class="error-message">What's your nick name?</span>
       </p>
-      <p class="description">＊一番多く選ばれたコースでセッティングします</p>
+      <p class="description">＊一番人気のあったコースが選ばれます</p>
 
       <div class="course-list">
         <label>
-          <input type="radio" v-model="selectedCourse" value="course1" />
+          <input type="radio" v-model="selectedCourse" value="お料理７品コース ¥2,700" />
           お料理７品とデザート、コーヒーが付いたスタンダードなコース ¥2,700
         </label>
-        <p v-if="selectedCourse === 'course1'" class="course-details narrow-width">
+        <p v-if="selectedCourse === 'お料理７品コース ¥2,700'" class="course-details narrow-width">
 <p>◆前菜５種盛り<br>
 ◆フォカッチャ<br>
 ◆ガーデンサラダ<br>
@@ -32,10 +32,10 @@
 
       <div class="course-list">
         <label>
-          <input type="radio" v-model="selectedCourse" value="course2" />
+          <input type="radio" v-model="selectedCourse" value="お料理７品飲み放題コース ¥4,300" />
           お料理７品のスタンダードコース。２時間ドリンク飲み放題付き ¥4,300
         </label>
-        <p v-if="selectedCourse === 'course2'" class="course-details narrow-width">
+        <p v-if="selectedCourse === 'お料理７品飲み放題コース ¥4,300'" class="course-details narrow-width">
           <p>◆前菜５種盛り<br>
 ◆フォカッチャ<br>
 ◆ガーデンサラダ<br>
@@ -50,10 +50,10 @@
 
       <div class="course-list">
         <label>
-          <input type="radio" v-model="selectedCourse" value="course3" />
+          <input type="radio" v-model="selectedCourse" value="お料理８品コース ¥3,200" />
           メインのお魚料理などお料理８品がつくタウンおススメのコース ¥3,200
         </label>
-        <p v-if="selectedCourse === 'course3'" class="course-details narrow-width">
+        <p v-if="selectedCourse === 'お料理８品コース ¥3,200'" class="course-details narrow-width">
 <p>◆前菜５種盛り<br>
 ◆フォカッチャ<br>
 ◆ガーデンサラダ<br>
@@ -68,10 +68,10 @@
 
       <div class="course-list">
         <label>
-          <input type="radio" v-model="selectedCourse" value="course4" />
-          お料理８品に飲み放題がついたタウンおすすめのコース ¥4,800
+          <input type="radio" v-model="selectedCourse" value="お料理８品飲み放題コース ¥4,800" />
+          お魚料理などの８品に飲み放題がついたタウンおすすめのコース ¥4,800
         </label>
-        <p v-if="selectedCourse === 'course4'" class="course-details narrow-width">
+        <p v-if="selectedCourse === 'お料理８品飲み放題コース ¥4,800'" class="course-details narrow-width">
           <p>◆前菜５種盛り<br>
 ◆フォカッチャ<br>
 ◆ガーデンサラダ<br>
@@ -86,7 +86,7 @@
 </p></div>
 
         <p>
-        <button type="submit">確認</button>
+        <button type="submit">投票</button>
       </p>
     </form>
   </div>
