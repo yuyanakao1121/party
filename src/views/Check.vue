@@ -6,7 +6,8 @@
     <button @click="submitForm" :disabled="isSubmitting || isSubmitted" class="join-button">Join!!</button>
     <button @click="cancel">Back</button>
     <div v-if="isSubmitted" class="success-message">
-      <p>ご参加ありがとうございます！！料金などの案内は後日お伝えします。</p>
+      <p>ご参加ありがとうございます！！<br>
+      料金などの案内は後日お伝えします。</p>
     </div>
   </div>
 </template>
