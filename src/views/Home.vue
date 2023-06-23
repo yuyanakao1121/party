@@ -113,7 +113,21 @@ const selectedCourse = ref('');
 const nameError = ref(false);
 
 //以下に参加者をハードコーディングするしかない
-const names = ref(['まー＆あおたん','satomin','おいかわ','toayu','まっつー','藤井聡太','ジャンジャン','森鴎外','龍玉']); 
+const names = ref([
+  'まー＆あおたん',
+  'satomin',
+  'おいかわ',
+  'toayu',
+  'まっつー',
+  '藤井聡太',
+  'ジャンジャン',
+  '森鴎外',
+  '龍玉',
+  'Nakagawa Yuki',
+  'かとー',
+  'チョモランマ'
+
+]); 
 
 const check = (event) => {
   event.preventDefault();
