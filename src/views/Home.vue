@@ -133,7 +133,8 @@ const names = ref([
   'ひなちゃん',
   'りんりん',
   'なるくん',
-  '古郡　卓弥'
+  '古郡　卓弥',
+  'haruki_nagasawa'
 ]); 
 
 const check = (event) => {
