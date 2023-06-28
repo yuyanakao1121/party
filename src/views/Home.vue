@@ -114,7 +114,6 @@ const nameError = ref(false);
 
 //以下に参加者をハードコーディングするしかない
 const names = ref([
-  'まー＆あおたん',
   'satomin',
   'おいかわ',
   'toayu',
