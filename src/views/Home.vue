@@ -162,7 +162,6 @@ const check = (event) => {
   justify-content: center;
   height: 100vh;
   text-align: center;
-  overflow-y: auto; /* スクロールバーを表示する */
 }
 .course-list {
   display: flex;
