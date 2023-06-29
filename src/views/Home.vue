@@ -166,6 +166,7 @@ const check = (event) => {
 .course-list {
   display: flex;
   flex-direction: column;
+  max-height: 200px; /* 適切な高さに調整する */
 }
 .error {
   border: 1px solid red;
@@ -178,8 +179,6 @@ const check = (event) => {
   color: red;
 }
   .course-details {
-  /* 適切な高さに調整する */
-  height: 200px;
   overflow-y: auto; /* スクロールバーを表示する */
 }
 .course-details.narrow-width {
