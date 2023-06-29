@@ -155,13 +155,14 @@ const check = (event) => {
 <style scoped>
 .container {
   max-width: 800px;
-  margin: auto; /* 中央に配置するために修正 */
+  margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  text-align: center; /* 中央に配置するために修正 */
+  text-align: center;
+  overflow-y: auto; /* スクロールバーを表示する */
 }
 .course-list {
   display: flex;
