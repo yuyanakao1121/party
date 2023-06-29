@@ -162,6 +162,7 @@ const check = (event) => {
   justify-content: center;
   height: 100vh;
   text-align: center; /* 中央に配置するために修正 */
+  overflow-y: auto; 
 }
 .course-list {
   display: flex;
@@ -176,6 +177,11 @@ const check = (event) => {
 }
 .description {
   color: red;
+}
+  .course-details {
+  /* 適切な高さに調整する */
+  height: 200px;
+  overflow-y: auto; /* スクロールバーを表示する */
 }
 .course-details.narrow-width {
   max-width: 400px; /* 好みに合わせて幅を調整してください */
