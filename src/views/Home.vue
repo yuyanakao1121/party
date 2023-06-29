@@ -162,7 +162,6 @@ const check = (event) => {
   justify-content: center;
   height: 100vh;
   text-align: center; /* 中央に配置するために修正 */
-  overflow-y: auto; 
 }
 .course-list {
   display: flex;
